@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehdixan Afşar | Cybersecurity Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0c0a0a;
+  --panel:#151212;
+  --panel2:#1c1717;
+  --line:#2b2323;
+  --red:#e8341c;
+  --red2:#ff6a45;
+  --text:#f2ecea;
+  --muted:#8f8584;
+  --r:14px;
+}
+
+* {box-sizing:border-box;margin:0}
+
+html {scroll-behavior:smooth;background:var(--bg)}
+
+body {
+  font-family:Manrope,system-ui,Arial,sans-serif;
+  color:var(--text);
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:230px minmax(0,1fr);
+  gap:18px;
+  padding:18px;
+  background:radial-gradient(900px 380px at 70% -10%,rgba(232,52,28,.22),transparent 70%),var(--bg);
+}
+
+a {color:inherit;text-decoration:none}
+
+:focus-visible {
+  outline:2px solid var(--red2);
+  outline-offset:3px;
+}
+
+/* SIDEBAR */
+
+.side {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:20px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  position:sticky;
+  top:18px;
+  height:calc(100vh - 36px);
+}
+
+.logo {
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+  padding:0 8px;
+}
+
+.logo b {color:var(--red2)}
+
+.cta {
+  background:var(--red);
+  color:white;
+  font-weight:700;
+  text-align:center;
+  padding:11px;
+  border-radius:10px;
+  transition:.2s;
+}
+
+.cta:hover {background:var(--red2)}
+
+nav {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+nav a {
+  padding:10px 12px;
+  border-radius:9px;
+  color:var(--muted);
+  font-weight:500;
+  font-size:14px;
+  transition:.2s;
+}
+
+nav a:hover,nav a.on {
+  background:var(--panel2);
+  color:var(--text);
+}
+
+.me {
+  margin-top:auto;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:10px;
+  border-top:1px solid var(--line);
+}
+
+.av {
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--red),#5a1208);
+  display:grid;
+  place-items:center;
+  font-weight:800;
+}
+
+.me small {
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* MAIN */
+
+main {
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  min-width:0;
+}
+
+.top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+h1 {
+  font-size:clamp(28px,4vw,42px);
+  font-weight:800;
+  line-height:1.2;
+}
+
+h1 span {color:var(--red2)}
+
+.sub {
+  color:var(--muted);
+  margin-top:8px;
+  max-width:65ch;
+  line-height:1.7;
+}
+
+.language-panel {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:15px;
+  width:400px;
+  flex-shrink:0;
+}
+
+.language-panel h3 {
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.language-row {
+  margin-top:10px;
+}
+
+.language-info {
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  margin-bottom:6px;
+}
+
+.language-info span:last-child {
+  color:var(--red2);
+  font-weight:700;
+}
+
+.language-bar {
+  display:flex;
+  gap:4px;
+}
+
+.language-bar span {
+  height:6px;
+  flex:1;
+  border-radius:5px;
+  background:var(--line);
+}
+
+.language-bar span.active {
+  background:var(--red);
+}
+
+@media(max-width:600px) {
+  .language-panel {
+    width:100%;
+  }
+}
+
+
+.lang {
+  display:flex;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:3px;
+}
+
+.lang button {
+  background:none;
+  border:0;
+  color:var(--muted);
+  font:700 13px Manrope,sans-serif;
+  padding:7px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.lang button.on {
+  background:var(--red);
+  color:white;
+}
+
+/* SECTIONS */
+
+.card {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:22px;
+  scroll-margin-top:18px;
+}
+
+h2 {
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+.section-label {
+  color:var(--red2);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:7px;
+}
+
+.about {
+  position:relative;
+  overflow:hidden;
+}
+
+.about::before {
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:-100px;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,106,69,.35),transparent 70%);
+  pointer-events:none;
+}
+
+.about p {
+  color:#cfc6c4;
+  line-height:1.85;
+  max-width:75ch;
+  position:relative;
+}
+
+/* EXPERIENCE */
+
+.list {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.item {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+  background:var(--panel2);
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:16px;
+  transition:border-color .2s;
+}
+
+.item:hover {border-color:var(--red)}
+
+.item b {
+  font-size:15px;
+}
+
+.item p {
+  color:#b9adab;
+  margin-top:7px;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.tag {
+  font-size:11px;
+  color:var(--red2);
+  border:1px solid #4a2018;
+  border-radius:20px;
+  padding:5px 10px;
+  white-space:nowrap;
+}
+
+/* SKILLS */
+
+.skills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill {
+  background:var(--panel2);
+  border:1px solid var(--line);
+  padding:10px 15px;
+  border-radius:9px;
+  color:#e5d9d6;
+  font-size:13px;
+  font-weight:600;
+  transition:.2s;
+}
+
+.skill:hover {
+  border-color:var(--red);
+  color:var(--red2);
+}
+
+/* EDUCATION */
+
+.info {
+  background:var(--panel2);
+  border:1px solid var(--line);
+  padding:16px;
+  border-radius:11px;
+}
+
+.info b {
+  display:block;
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+.info p {
+  color:#b9adab;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.info small {
+  display:block;
+  color:var(--red2);
+  margin-top:8px;
+  font-size:11px;
+}
+
+/* CONTACT */
+
+.contact {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.contact a {
+  background:var(--panel2);
+  border:1px solid var(--line);
+  padding:11px 17px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:14px;
+  transition:.2s;
+}
+
+.contact a:hover {border-color:var(--red)}
+
+.note {
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+  padding:8px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:960px) {
+  body {grid-template-columns:1fr}
+
+  .side {
+    position:static;
+    height:auto;
+  }
+
+  nav {
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .me {display:none}
+}
+
+@media(max-width:600px) {
+  body {padding:10px;gap:12px}
+
+  .card {padding:17px}
+
+  .top {align-items:flex-start}
+
+  .lang {margin-top:5px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<aside class="side">
+
+  <div class="logo">MEHDIXAN<b>.</b>DEV</div>
+
+  <a class="cta" href="#contact"
+     data-az="Əlaqə saxla"
+     data-en="Contact me">Əlaqə saxla</a>
+
+  <nav>
+    <a class="on" href="#top"
+       data-az="Ana səhifə"
+       data-en="Home">Ana səhifə</a>
+
+    <a href="#about"
+       data-az="Haqqımda"
+       data-en="About">Haqqımda</a>
+
+    <a href="#experience"
+       data-az="Təcrübə"
+       data-en="Experience">Təcrübə</a>
+
+    <a href="#skills"
+       data-az="Bacarıqlar"
+       data-en="Skills">Bacarıqlar</a>
+
+    <a href="#education"
+       data-az="Təhsil"
+       data-en="Education">Təhsil</a>
+
+    <a href="#contact"
+       data-az="Əlaqə"
+       data-en="Contact">Əlaqə</a>
+  </nav>
+
+  <div class="me">
+    <div class="av">MA</div>
+    <div>Mehdixan A.<small data-az="Tələbə" data-en="Student">Tələbə</small></div>
+  </div>
+
+</aside>
+
+<!-- MAIN CONTENT -->
+
+<main id="top">
+
+  <!-- HEADER -->
+
+  <div class="top">
+    <div>
+      <div class="section-label">WELCOME TO MY PORTFOLIO</div>
+
+      <h1>Mehdixan <span>Afşar</span></h1>
+
+      <p class="sub"
+         data-az="İnformasiya təhlükəsizliyi tələbəsi. Pentesting, Red Team və şəbəkə təhlükəsizliyi sahələrində bilik və bacarıqlarını inkişaf etdirən gələcək kibertəhlükəsizlik mütəxəssisi."
+         data-en="Information Security student developing knowledge and skills in Penetration Testing, Red Team operations and Network Security.">
+         İnformasiya təhlükəsizliyi tələbəsi. Pentesting, Red Team və şəbəkə təhlükəsizliyi sahələrində bilik və bacarıqlarını inkişaf etdirən gələcək kibertəhlükəsizlik mütəxəssisi.
+      </p>
+    </div>
+
+
+<div class="language-panel">
+  <h3 data-az="Dil bilikləri" data-en="Languages">
+    Dil bilikləri
+  </h3>
+
+  <div class="language-row">
+    <div class="language-info">
+      <span>Azerbaijani</span>
+      <span>Native</span>
+    </div>
+    <div class="language-bar">
+      <span class="active"></span>
+      <span class="active"></span>
+      <span class="active"></span>
+      <span class="active"></span>
+      <span class="active"></span>
+    </div>
+  </div>
+
+  <div class="language-row">
+    <div class="language-info">
+      <span>English</span>
+      <span>B1</span>
+    </div>
+    <div class="language-bar">
+      <span class="active"></span>
+      <span class="active"></span>
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="language-row">
+    <div class="language-info">
+      <span>Spanish</span>
+      <span>A1</span>
+    </div>
+    <div class="language-bar">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+
+    <div class="lang">
+      <button class="on" data-l="az">AZ</button>
+      <button data-l="en">EN</button>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+
+  <section class="card about" id="about">
+    <div class="section-label">01 / ABOUT</div>
+
+    <h2 data-az="Haqqımda" data-en="About Me">Haqqımda</h2>
+
+    <p
+      data-az="Mən İnformasiya təhlükəsizliyi ixtisası üzrə təhsil alan və kibertəhlükəsizlik sahəsinə böyük maraq göstərən tələbəyəm. Xüsusilə Penetration Testing, Red Team əməliyyatları və şəbəkə təhlükəsizliyi istiqamətləri ilə maraqlanıram. Sistemlərin və şəbəkələrin necə işlədiyini, mümkün təhlükəsizlik boşluqlarının necə aşkar edildiyini öyrənməyi sevirəm. Praktiki laboratoriyalar və fərdi araşdırmalar vasitəsilə texniki biliklərimi davamlı olaraq inkişaf etdirirəm. Məqsədim nəzəri biliklərimi praktiki təcrübə ilə birləşdirərək peşəkar kibertəhlükəsizlik mütəxəssisi olmaqdır."
+      data-en="I am an Information Security student with a strong interest in cybersecurity, particularly Penetration Testing, Red Team operations and Network Security. I enjoy understanding how systems and networks work and how security vulnerabilities can be identified. Through hands-on labs and independent learning, I continuously develop my technical knowledge. My goal is to combine theoretical knowledge with practical experience and become a cybersecurity professional.">
+      Mən İnformasiya təhlükəsizliyi ixtisası üzrə təhsil alan və kibertəhlükəsizlik sahəsinə böyük maraq göstərən tələbəyəm. Xüsusilə Penetration Testing, Red Team əməliyyatları və şəbəkə təhlükəsizliyi istiqamətləri ilə maraqlanıram. Sistemlərin və şəbəkələrin necə işlədiyini, mümkün təhlükəsizlik boşluqlarının necə aşkar edildiyini öyrənməyi sevirəm. Praktiki laboratoriyalar və fərdi araşdırmalar vasitəsilə texniki biliklərimi davamlı olaraq inkişaf etdirirəm. Məqsədim nəzəri biliklərimi praktiki təcrübə ilə birləşdirərək peşəkar kibertəhlükəsizlik mütəxəssisi olmaqdır.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section class="card" id="experience">
+    <div class="section-label">02 / EXPERIENCE & LEARNING</div>
+
+    <h2 data-az="Təcrübə və öyrənmə" data-en="Experience & Learning">
+      Təcrübə və öyrənmə
+    </h2>
+
+    <div class="list">
+
+      <div class="item">
+        <div>
+          <b>TechPoint Academy</b>
+          <p
+            data-az="Linux əməliyyat sistemi, şəbəkə texnologiyaları və təhlükəsizliyi, Active Directory, veb texnologiyaları, veb təhlükəsizliyi və Web Pentesting istiqamətlərində bilik və praktiki bacarıqların inkişaf etdirilməsi. Nmap və digər təhlükəsizlik alətləri ilə tanışlıq."
+            data-en="Developing knowledge and practical skills in Linux, networking, Active Directory, web technologies, web security and Web Penetration Testing. Introduction to Nmap and other security tools.">
+            Linux əməliyyat sistemi, şəbəkə texnologiyaları, Active Directory, veb texnologiyaları, veb təhlükəsizliyi və Web Pentesting istiqamətlərində bilik və praktiki bacarıqların inkişaf etdirilməsi. Nmap və digər təhlükəsizlik alətləri ilə tanışlıq.
+          </p>
+        </div>
+        <span class="tag" data-az="Akademiya" data-en="Academy">Akademiya</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <b>CodeAlpha</b>
+          <p
+            data-az="CodeAlpha proqramı çərçivəsində iştirak və fəaliyyətlər."
+            data-en="Participation and activities within the CodeAlpha program.">
+            CodeAlpha proqramı çərçivəsində iştirak və fəaliyyətlər.
+          </p>
+        </div>
+        <span class="tag" data-az="Proqram" data-en="Program">Proqram</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="card" id="skills">
+    <div class="section-label">03 / TECHNICAL SKILLS</div>
+
+    <h2 data-az="Bacarıqlar" data-en="Technical Skills">Bacarıqlar</h2>
+
+    <p class="sub"
+       data-az="Hazırda öyrəndiyim və inkişaf etdirdiyim texniki istiqamətlər."
+       data-en="Technical areas I am currently learning and developing.">
+       Hazırda öyrəndiyim və inkişaf etdirdiyim texniki istiqamətlər.
+    </p>
+
+    <div class="skills" style="margin-top:18px">
+      <span class="skill">Linux</span>
+      <span class="skill">Networking</span>
+      <span class="skill">Active Directory</span>
+      <span class="skill">Nmap</span>
+      <span class="skill">Web Security</span>
+      <span class="skill">Web Pentesting</span>
+      <span class="skill">OSINT</span>
+      <span class="skill">Windows Server</span>
+      <span class="skill">Burp Suite</span>
+      <span class="skill">AutoCAD</span>
+      <span class="skill">Metasploit</span>
+      <span class="skill">Privilege Escalation</span>
+      <span class="skill">Ethical Hacking</span>
+      <span class="skill">İnternet Security</span>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section class="card" id="education">
+    <div class="section-label">04 / EDUCATION</div>
+
+    <h2 data-az="Təhsil" data-en="Education">Təhsil</h2>
+
+    <div class="info">
+      <b data-az="Azərbaycan Memarlıq və İnşaat Universiteti"
+         data-en="Azerbaijan University of Architecture and Construction">
+         Azərbaycan Memarlıq və İnşaat Universiteti
+      </b>
+
+      <p
+        data-az="İnformasiya təhlükəsizliyi ixtisası"
+        data-en="Information Security">
+        İnformasiya təhlükəsizliyi ixtisası
+      </p>
+
+      <small data-az="Bakalavr · 3-cü kurs"
+             data-en="Bachelor's Degree · 3rd Year">
+        Bakalavr · 3-cü kurs
+      </small>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="card" id="contact">
+    <div class="section-label">05 / GET IN TOUCH</div>
+
+    <h2 data-az="Əlaqə" data-en="Contact">Əlaqə</h2>
+
+    <p class="sub"
+       data-az="Kibertəhlükəsizlik sahəsində yeni imkanlara, maraqlı layihələrə və peşəkar əməkdaşlıqlara açığam. Mənimlə əlaqə saxlamaqdan çəkinməyin."
+       data-en="I'm open to new opportunities, interesting projects and professional connections in cybersecurity. Feel free to get in touch.">
+       Kibertəhlükəsizlik sahəsində yeni imkanlara, maraqlı layihələrə və peşəkar əməkdaşlıqlara açığam. Mənimlə əlaqə saxlamaqdan çəkinməyin.
+    </p>
+
+    <div class="contact" style="margin-top:18px">
+
+      <a href="https://github.com/mehdikhanafsar"
+         target="_blank" rel="noopener">GitHub</a>
+
+      <a href="mailto:mehdikhanafsar@gmail.com">Email</a>
+
+      <a href="https://www.linkedin.com/in/mehdixan-afsar-852059354/"
+         target="_blank" rel="noopener">LinkedIn</a>
+
+    </div>
+  </section>
+
+  <p class="note">© Mehdixan Afşar · 2026</p>
+
+</main>
+
+<script>
+const btns = document.querySelectorAll('.lang button');
+
+function setLang(l) {
+  document.documentElement.lang = l;
+
+  document.querySelectorAll('[data-az]').forEach(el => {
+    el.textContent = el.dataset[l];
+  });
+
+  btns.forEach(b => {
+    b.classList.toggle('on', b.dataset.l === l);
+  });
+
+  try {
+    localStorage.setItem('lang', l);
+  } catch(e) {}
+}
+
+btns.forEach(b => {
+  b.addEventListener('click', () => setLang(b.dataset.l));
+});
+
+let saved = 'az';
+
+try {
+  saved = localStorage.getItem('lang') || 'az';
+} catch(e) {}
+
+setLang(saved);
+</script>
+
+</body>
+</html>
